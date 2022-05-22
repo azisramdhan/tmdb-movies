@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="alfatih.me.moviecatalogue">
+
+    <!-- https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="alfatih.me.moviecatalogue.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="alfatih.me.moviecatalogue.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <provider
+            android:name=".data.source.local.movie.MovieProvider"
+            android:authorities="alfatih.me.moviecatalogue"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".feature.reminder.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".feature.reminder.ReminderActivity"
+            android:parentActivityName=".feature.list.ListActivity" />
+
+        <receiver android:name=".widget.FavoriteMovieWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/favorite_movie_widget_info" />
+        </receiver>
+
+        <activity android:name=".feature.favorite.FavoriteActivity" />
+        <activity
+            android:name=".feature.detail.movie.DetailMovieActivity"
+            android:parentActivityName=".feature.list.ListActivity" />
+        <activity
+            android:name=".feature.detail.tv.DetailTVShowActivity"
+            android:parentActivityName=".feature.list.ListActivity" />
+        <activity android:name=".feature.list.ListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".widget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+    </application>
+
+</manifest>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Film TMDB</string>
+    <string name="language">Bahasa</string>
+    <string name="movies">Film</string>
+    <string name="tv_show">Acara TV</string>
+    <string name="popup_message">Aplikasi ini membutuhkan koneksi internet</string>
+    <string name="popup_title">Kamu sedang offline</string>
+    <string name="favorite">Favorit</string>
+    <string name="mark_as_favorite">Tandai Favorit</string>
+    <string name="failed_response_favorite">Gagal menambahkan film ke list favorit</string>
+    <string name="success_response_favorite">Sukses menambahkan film ke list favorit</string>
+    <string name="remove_from_favorite">Hapus dari Favorit</string>
+    <string name="failed_response_delete">Gagal menghapus film dari daftar favorit</string>
+    <string name="success_response_delete">Berhasil menghapus film dari daftar favorit</string>
+    <string name="appwidget_text">CONTOH</string>
+    <string name="add_widget">Tambah widget</string>
+    <string name="reminder">Pengingat</string>
+    <string name="daily_reminder">Pengingat Harian</string>
+    <string name="release_reminder">Pengingat Rilis</string>
+    <string name="daily_notif_message">Cek info film hari ini yuk !</string>
+</resources>

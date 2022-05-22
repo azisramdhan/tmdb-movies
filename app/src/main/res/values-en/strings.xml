@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TMDB Movie</string>
+    <string name="language">Language</string>
+    <string name="movies">Movies</string>
+    <string name="tv_show">TV Show</string>
+    <string name="popup_message">This application requires an internet connection</string>
+    <string name="popup_title">You are offline</string>
+    <string name="favorite">Favorite</string>
+    <string name="mark_as_favorite">Mark as Favorite</string>
+    <string name="failed_response_favorite">Failed to add movie to favorite list</string>
+    <string name="success_response_favorite">Successfully added the movie to the favorites list</string>
+    <string name="remove_from_favorite">Remove from Favorite</string>
+    <string name="success_response_delete">Successfully remove the movie from the favorites list</string>
+    <string name="failed_response_delete">Failed to remove movie from favorite list</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="reminder">Reminder</string>
+    <string name="daily_reminder">Daily Reminder</string>
+    <string name="release_reminder">Release Reminder</string>
+    <string name="daily_notif_message">Check movie info today!</string>
+</resources>
